@@ -1,0 +1,381 @@
+/* ==========================================================================
+   VARIABLES CSS - Colores y valores reutilizables
+   ========================================================================== */
+:root {
+  /* Colores principales */
+  --color-primary: #5a7a5a;
+  --color-primary-dark: #4a6a4a;
+  --color-text: #2d3e2d;
+  --color-text-light: #3d4e3d;
+  --color-bg-overlay: rgba(255, 255, 255, 0.95);
+  --color-bg-dark: rgba(45, 62, 45, 0.95);
+  --color-accent: rgba(157, 178, 140, 0.3);
+  --color-accent-hover: rgba(157, 178, 140, 0.6);
+  --color-border: rgba(157, 178, 140, 0.3);
+  
+  /* Espaciados */
+  --spacing-xs: 10px;
+  --spacing-sm: 15px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  --spacing-xl: 40px;
+  
+  /* Tamaños de fuente */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  
+  /* Otros */
+  --border-radius: 10px;
+  --border-radius-sm: 5px;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   RESET Y BASE
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: #f5efd8;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   LAYOUT - Grid Container
+   ========================================================================== */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+header {
+  grid-area: header;
+  background: var(--color-bg-overlay);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  
+  /* Grid interno del header */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+/* Logo */
+.logo,
+header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 5px;
+  object-fit: contain;
+  background: var(--color-text);
+}
+
+/* Título */
+header h1 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  font-weight: 700;
+  justify-self: start;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN
+   ========================================================================== */
+nav {
+  justify-self: end;
+}
+
+nav ul {
+  display: flex;
+  gap: var(--spacing-sm);
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  background: var(--color-accent);
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+nav a:active {
+  transform: translateY(0);
+}
+
+/* Indicador de página actual */
+nav a[aria-current="page"] {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+main {
+  grid-area: main;
+  background: var(--color-bg-overlay);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+main h2 {
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-md);
+}
+
+main p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-sm);
+}
+.main-image {
+  width: 100%;
+  height: auto;
+  margin-top: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+main p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  grid-area: footer;
+  background: var(--color-bg-dark);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+/* ==========================================================================
+   FORMULARIO DE CONTACTO
+   ========================================================================== */
+.contact-form {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+/* Formulario del main (página de contacto) con Grid avanzado */
+main .contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+main .contact-form .form-group:nth-child(1),
+main .contact-form .form-group:nth-child(2) {
+  grid-column: span 1;
+}
+
+main .contact-form .form-group:nth-child(3),
+main .contact-form .form-group:nth-child(4) {
+  grid-column: span 2;
+}
+
+main .contact-form button {
+  grid-column: span 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px var(--spacing-sm);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  background: var(--color-bg-overlay);
+  color: var(--color-text);
+  transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #9db28c;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(157, 178, 140, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button {
+  padding: 12px var(--spacing-lg);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  justify-self: center;
+}
+
+.contact-form button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   PÁGINA ABOUT - Grid con imágenes y texto
+   ========================================================================== */
+.about-content .intro {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.about-text h3 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-text p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  min-height: 250px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   UTILIDADES
+   ========================================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+@media print {
+  body {
+    background: white;
+  }
+
+  header,
+  footer {
+    background: #f5f5f5;
+    box-shadow: none;
+  }
+
+  nav,
+  .contact-form {
+    display: none;
+  }
+}

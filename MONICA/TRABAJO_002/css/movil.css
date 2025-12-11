@@ -1,0 +1,139 @@
+@media (max-width: 767px) {
+  :root {
+    --font-size-2xl: 1.5rem;
+  }
+
+  header {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "logo title"
+      "navigation navigation";
+    gap: var(--spacing-sm);
+  }
+
+  .logo,
+  header img {
+    grid-area: logo;
+    width: 50px;
+    height: 50px;
+  }
+
+  header h1 {
+    grid-area: title;
+  }
+
+  nav {
+    grid-area: navigation;
+    justify-self: center;
+    width: 100%;
+  }
+
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  nav a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  main {
+    padding: 25px;
+  }
+
+  /* Formulario a 1 columna en móvil */
+  main .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  main .contact-form .form-group,
+  main .contact-form button {
+    grid-column: span 1;
+  }
+
+  /* About grid responsive */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image {
+    min-height: 200px;
+  }
+
+  footer {
+    padding: var(--spacing-md);
+  }
+}@media (max-width: 767px) {
+  :root {
+    --font-size-2xl: 1.5rem;
+  }
+
+  header {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "logo title"
+      "navigation navigation";
+    gap: var(--spacing-sm);
+  }
+
+  .logo,
+  header img {
+    grid-area: logo;
+    width: 50px;
+    height: 50px;
+  }
+
+  header h1 {
+    grid-area: title;
+  }
+
+  nav {
+    grid-area: navigation;
+    justify-self: center;
+    width: 100%;
+  }
+
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  nav a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  main {
+    padding: 25px;
+  }
+
+  /* Formulario a 1 columna en móvil */
+  main .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  main .contact-form .form-group,
+  main .contact-form button {
+    grid-column: span 1;
+  }
+
+  /* About grid responsive */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image {
+    min-height: 200px;
+  }
+
+  footer {
+    padding: var(--spacing-md);
+  }
+}

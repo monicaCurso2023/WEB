@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  header h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .logo,
+  header img {
+    width: 70px;
+    height: 70px;
+  }
+
+  nav ul {
+    gap: var(--spacing-md);
+  }
+}

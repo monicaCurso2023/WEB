@@ -1,0 +1,244 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY GENERAL (formulario, éxito y error) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* CONTENEDOR GENÉRICO */
+.contenedor {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* TÍTULO GENÉRICO */
+.contenedor h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* SUBTÍTULOS / PÁRRAFOS GENERALES */
+.contenedor p {
+    color: #666666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* ========================= */
+/*   FORMULARIO (index.php)  */
+/* ========================= */
+
+.grupo-formulario {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-formulario label {
+    font-weight: 600;
+    color: #555555;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="email"],
+.grupo-formulario input[type="tel"],
+.grupo-formulario textarea {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grupo-formulario input[type="text"]:focus,
+.grupo-formulario input[type="email"]:focus,
+.grupo-formulario input[type="tel"]:focus,
+.grupo-formulario textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.grupo-formulario textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.campo-requerido {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* BOTONES DEL FORMULARIO */
+.botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.botones button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-enviar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-limpiar {
+    background: #ecf0f1;
+    color: #333333;
+}
+
+.btn-limpiar:hover {
+    background: #bdc3c7;
+}
+
+/* ============================= */
+/*   PÁGINA DE ÉXITO (procesar)  */
+/* ============================= */
+
+.icono-exito {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.id-contacto {
+    background: #e8f4f8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+/* Bloque resumen datos */
+.resumen {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.resumen-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.resumen-item:last-child {
+    border-bottom: none;
+}
+
+.resumen-label {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.resumen-valor {
+    color: #333333;
+    margin-top: 5px;
+    word-break: break-word;
+}
+
+/* Enlace / botón volver */
+.contenedor a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.contenedor a:hover {
+    transform: translateY(-2px);
+}
+
+/* ============================= */
+/*   PÁGINA DE ERROR (procesar)  */
+/* ============================= */
+
+.icono-error {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.errores {
+    background: #fadbd8;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.error-item {
+    color: #c0392b;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.error-item::before {
+    content: "❌ ";
+    position: absolute;
+    left: 0;
+}
+
+.error-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ================= */
+/*   RESPONSIVE      */
+/* ================= */
+
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 25px;
+    }
+
+    .contenedor h1 {
+        font-size: 22px;
+    }
+}
