@@ -55,33 +55,27 @@ def mi_chivato(funcion):
         return resultado
     return envoltura
 
-# usamos el decorador con @
 @mi_chivato
 def suma_pesada(a, b):
-    return a + bimport pandas as pd
+    return a + b
 
+import pandas as pd
 print("\n--EJERCICIO 4: Pandas básico--")
 
 datos = {
-    "Alumno": ["Ana", "Pedro", "Carlos", "Maria"],
-    "Nota": [8.5, 4.0, 9.2, 6.5],
-    "Aprobado": [True, False, True, True]
+    "Alumno": ["Ana", "Pedro", "Juan"],
+    "Nota": [8.5, 9.0, 7.5]
 }
+
 df = pd.DataFrame(datos)
-print("----Tabla de Notas")
 print(df)
 
-print("\n --Alumnos Destacados (< 8)----")
-destacados = df[df["Nota"] < 8]
-print(destacados)
+print("\n--EJERCICIO 5: Pandas básico--")
 
-promedio = df['Nota'].mean()
-print(f"\nNota media de la clase: {promedio}")
-@mi_chivato
-def saludar(nombre):
-    print(f"Hola {nombre}")
-#probamos
-x = suma_pesada(10 , 20)
-print(f"El resultado de la suma es: {x}")
+df2 = pd.DataFrame({
+    "Alumno": ["Ana", "Pedro", "Juan"],
+    "Nota": [8.5, 9.0, 7.5]
+})
 
-saludar("Estudiante")
+print(df2)
+
